@@ -513,39 +513,23 @@
 import React, { useState } from "react";
 import { DataGrid } from '@mui/x-data-grid';
 import Paper from '@mui/material/Paper';
-import { CarTaxiFront, Delete, Edit, LockOpen, LockOpenIcon, Trash2 } from "lucide-react";
+import {  Delete, Edit, LockOpen, Trash2 } from "lucide-react";
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import {
-    Box,
-    Card,
-    CardContent,
-    Typography,
     TextField,
-    IconButton,
     MenuItem,
     Select,
     InputLabel,
     FormControl,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow,
-    Pagination,
     Stack,
-    Button,
-    Drawer,
     Checkbox,
     FormControlLabel,
     FormHelperText,
-    Grid,
 } from "@mui/material";
-import { Create } from "@mui/icons-material";
 
 const Product = () => {
     const [open, setOpen] = React.useState(false);

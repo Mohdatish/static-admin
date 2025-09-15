@@ -1,8 +1,6 @@
-import React from "react";
 import { DataGrid } from '@mui/x-data-grid';
 import Paper from '@mui/material/Paper';
-import { Delete, Edit, LockOpen, LockOpenIcon } from "lucide-react";
-import { Tooltip } from "chart.js";
+import { LockOpenIcon } from "lucide-react";
 
 const Users = () => {
 

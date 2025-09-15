@@ -17,7 +17,4 @@ export default [
     { path: "/notifications", Component: <NotificationManagement /> },
     { path: "/products", Component: <Product /> },
     { path: "/loan", Component: <Loan /> },
-
-
-    // { path: "/*", Component: <Home /> },
 ]

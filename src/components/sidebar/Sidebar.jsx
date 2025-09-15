@@ -1,32 +1,15 @@
-import React, { useState } from "react";
 import "./sidebar.css";
 
 import { NavLink } from "react-router-dom";
 
 import {
-  PeopleOutline,
-  ContentPasteOutlined,
-  StoreMallDirectoryOutlined,
-  RoomService,
-  SupportAgent,
-  HomeRepairService,
-  Home,
-  BookOnline,
-  Category,
-  StarBorderPurple500,
   EqualizerOutlined,
-  BusinessCenterOutlined,
-  LiveHelp,
-  Info,
-  Gavel,
-  Shield,
-  FiberNew,
+  PeopleOutline,
+  RoomService,
 } from "@mui/icons-material";
-import { useSelector } from "react-redux";
 import { HandCoins, ShoppingCart } from "lucide-react";
 
 export default function Sidebar() {
-  const user = useSelector((state) => state.userinfo.user);
 
   return (
     <div className="sidebar">

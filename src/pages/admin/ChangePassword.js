@@ -9,7 +9,6 @@ import toast from 'react-hot-toast'
 
 const ChangePassword = () => {
   const [message, setMessage] = useState('')
-  const [view, setView] = useState(false)
   const navigate = useNavigate()
   const [obj, setObj] = useState({
     new_password: "",

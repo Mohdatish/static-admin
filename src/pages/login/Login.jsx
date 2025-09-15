@@ -1,26 +1,17 @@
 import "./login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getRequest, postRequest, setToken } from "../../ApiFunction";
-import { setCount } from "../../slice/count";
-import { useDispatch } from "react-redux";
-import { setUser } from "../../slice/userInfo";
-import API from "../../Api";
-import toast from "react-hot-toast";
 import { Container } from "@mui/material";
 import { LoginPaper } from "../../components/Styles";
 
 export default function Login() {
 
   const navigate = useNavigate();
-  const [load, setLoad] = useState(false);
-  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const [view, setView] = useState(false);
   const [obj, setObj] = useState({
     email: "",
     password: "",
   });
-  const dispatch = useDispatch();
 
   const handleKeyDown = (e) => {
     if (e.key === " ") {
@@ -41,25 +32,7 @@ export default function Login() {
     });
   };
 
-  const getCounts = async () => {
-    try {
-      const result = await getRequest(`${API.GET_COUNTS}`);
-      if (!result.data.status) {
-        if (result.data.code === 401) {
-          localStorage.clear("admintoken");
-          sessionStorage.clear("admintoken");
-          navigate("/admin");
-          toast.info("Session expired");
-        }
-        toast.error(result.data.message);
-      } else {
-        dispatch(setCount(result.data.data));
-        localStorage.setItem("count", JSON.stringify(result.data.data));
-      }
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+
 
   const submitForm = async (event) => {
     event.preventDefault();
@@ -67,23 +40,23 @@ export default function Login() {
       localStorage.setItem("adminToken", "loggedin");
       navigate("/dashboard")
       return
-      setLoad(true);
-      const result = await postRequest(`${API.LOGIN}`, obj);
-      if (!result.data.status) {
-        await delay(1000);
-        toast.error(result.data.message);
-      } else {
-        setToken(result.data.token);
-        getCounts();
-        setLoad(false);
-        localStorage.setItem("adminToken", result.data.token);
-        localStorage.setItem("user", JSON.stringify(result.data.data));
-        toast.success("Logged In successfully!");
-        dispatch(setUser(result.data.data));
-        await delay(1000);
-        setLoad(false);
-        navigate("/dashboard");
-      }
+      // setLoad(true);
+      // const result = await postRequest(`${API.LOGIN}`, obj);
+      // if (!result.data.status) {
+      //   await delay(1000);
+      //   toast.error(result.data.message);
+      // } else {
+      //   setToken(result.data.token);
+      //   getCounts();
+      //   setLoad(false);
+      //   localStorage.setItem("adminToken", result.data.token);
+      //   localStorage.setItem("user", JSON.stringify(result.data.data));
+      //   toast.success("Logged In successfully!");
+      //   dispatch(setUser(result.data.data));
+      //   await delay(1000);
+      //   setLoad(false);
+      //   navigate("/dashboard");
+      // }
 
       // if (!result.data.status) {
       //   if (result.data.code === 201) {
@@ -99,19 +72,6 @@ export default function Login() {
     }
   };
 
-  const submitFormForgotPass = async (event) => {
-    // event.preventDefault();
-    // try {
-    //   const result = await APIFunction.forgotPassword(obj);
-    //   if (result.data.code === 200) {
-    //     setMessage(true);
-    //   } else if (result.data.code === 201) {
-    //     toast.info("Account does not exist!");
-    //   }
-    // } catch (err) {
-    //   console.error(err.message);
-    // }
-  };
 
   return (
     <>
@@ -163,7 +123,8 @@ export default function Login() {
                         ></i>
                       </div>
                       <button className="custom-button w-100 mt-2">
-                        {load ? "authenticating..." : "Sign In"}
+                        Sign In
+                        {/* {load ? "authenticating..." : "Sign In"} */}
                       </button>
                     </div>
                   </div>

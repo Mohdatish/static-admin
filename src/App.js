@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './app.css';
-import { styled, useTheme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -9,7 +9,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
 import Routing from './Routing.js';
 import Sidebar from './components/sidebar/Sidebar';
 import Topbar from './components/topbar/Topbar';
@@ -60,20 +59,10 @@ const AppBar = styled(MuiAppBar, {
 
 
 
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  padding: theme.spacing(0, 1),
-  ...theme.mixins.toolbar,
-  justifyContent: 'flex-end',
-}));
-
-
 
 
 export default function App() {
   const router = useLocation();
-  const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const auth = localStorage.getItem("adminToken")
   const handleDrawerOpen = () => {
@@ -107,7 +96,7 @@ export default function App() {
           },
         }}
       />
-      {router.pathname != "/"
+      {router.pathname !== "/"
         ?
         <Box sx={{
           display: 'flex',

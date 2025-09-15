@@ -1,5 +1,5 @@
 import { ErrorOutline, LocationOn, QueryBuilder } from '@mui/icons-material'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Loader from '../../components/loader/Loader'
 import API, { BASE_URL } from '../../Api'
@@ -20,7 +20,7 @@ const UserDetails = () => {
     const [history, setHistory] = useState(0)
 
 
-    const getAll = async () => {
+    const getAll = useCallback(async () => {
         const result = await postRequest(`${API.GET_USER_DETAILS}`, { id: router.id });
         if (!result.data.status) {
             if (result.data.code === 205) {
@@ -42,12 +42,12 @@ const UserDetails = () => {
             await delay(1000);
             setIsLoading(false)
         }
-    }
+    },[router,navigate])
 
     useEffect(() => {
         setIsLoading(true)
         getAll()
-    }, [])
+    }, [getAll])
 
     return (
         <>
