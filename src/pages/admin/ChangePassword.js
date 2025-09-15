@@ -85,7 +85,7 @@ const ChangePassword = () => {
           <Grid item><DetailData className='mt-4'>Confirm New Password</DetailData></Grid>
           <Grid item style={{ width: "40%" }}><input required={true} type="password" id="confirm_password" name="confirm_password" onChange={inputEvent} onKeyDown={handleKeyDown} className='detailBarInput' value={obj.confirm_password} />  </Grid>
           <Grid item>{message !== "" ? <div className='errText'>{message}</div> : null}</Grid>
-          <Grid item><button className='tripiBtn mt-2' >Set Password</button></Grid>
+          <Grid item><button className='custom-button mt-2' >Set Password</button></Grid>
         </Grid>
       </form>
     </BackPaper>

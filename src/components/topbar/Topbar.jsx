@@ -24,6 +24,10 @@ export default function Topbar() {
   };
   const logoutClick = async (e) => {
     try {
+      localStorage.removeItem("adminToken");
+      localStorage.clear();
+      navigate("/");
+      return
       const result = await postRequest(`${API.LOGOUT}`, {
         token: localStorage.getItem("adminToken"),
       });
@@ -55,8 +59,8 @@ export default function Topbar() {
     <div className="topbarWrapper">
       <div className="logoContainer">
         <span className="spanName">
-          Tripi
-          </span>
+          MiraCore
+        </span>
       </div>
       <div className="topRight">
         <Button
@@ -67,19 +71,7 @@ export default function Topbar() {
           onClick={handleClick}
           sx={{ shadow: "none" }}
         >
-          {user?.profile_pic !== "" ? (
-            <img
-              src={`${BASE_URL}uploads/images/${user?.profile_pic}`}
-              alt="topAvatar"
-              className="topAvatar"
-            />
-          ) : (
-            <img
-              src="/images/blank_pic.png"
-              alt="topAvatar"
-              className="topAvatar"
-            />
-          )}
+          {user?.name || 'Admin'}
         </Button>
         <Menu
           id="basic-menu"

@@ -23,6 +23,7 @@ import {
   FiberNew,
 } from "@mui/icons-material";
 import { useSelector } from "react-redux";
+import { HandCoins, ShoppingCart } from "lucide-react";
 
 export default function Sidebar() {
   const user = useSelector((state) => state.userinfo.user);
@@ -40,7 +41,6 @@ export default function Sidebar() {
             </div>
           </NavLink>
         </div>
-        <hr></hr>
         <div className="sidebarMenu">
           <NavLink to="/users">
             <div className="sidebarSelect">
@@ -51,29 +51,26 @@ export default function Sidebar() {
             </div>
           </NavLink>
         </div>
-        <hr></hr>
         <div className="sidebarMenu">
           <NavLink to="/products">
             <div className="sidebarSelect">
               <div className="sidebarSelectHead">
-                <BusinessCenterOutlined className="icon" />
+                <ShoppingCart className="icon" />
                 <span>Products</span>
               </div>
             </div>
           </NavLink>
         </div>
-        <hr></hr>
         <div className="sidebarMenu">
-          <NavLink to="/loans">
+          <NavLink to="/loan">
             <div className="sidebarSelect">
               <div className="sidebarSelectHead">
-                <FiberNew className="icon" />
+                <HandCoins className="icon" />
                 <span>Loans</span>
               </div>
             </div>
           </NavLink>
         </div>
-        <hr></hr>
         <div className="sidebarMenu">
           <NavLink to="/notifications">
             <div className="sidebarSelect">

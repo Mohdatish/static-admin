@@ -3,19 +3,19 @@ import { Paper, Typography, styled } from "@mui/material";
 export const BackPaper = styled(Paper)({
     height: "auto",
     borderRadius: "0",
-    padding: "20px",
+    padding: "20px !important",
     overflowX: 'hidden',
     // overflowY: 'auto',
     boxShadow: "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px"
 })
 
 export const LoginPaper = styled(Paper)({
-    height: "auto",
+    height: "500px",
     border: "1px solid rgba(114, 114, 114, 0.3)",
     width: "100%",
     backgroundColor: "#fff",
     padding: "15px",
-    overflow: "auto",
+    // overflow: "auto",
     borderRadius:"12px",
     boxShadow: "none"
 })

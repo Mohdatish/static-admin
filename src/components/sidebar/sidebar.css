@@ -69,7 +69,6 @@ a.link.active .sidebarListItem {
   display: flex;
   gap: 10px;
   justify-content: flex-start;
-  margin-left: 10px;
   padding: 10px 10px 10px 10px;
   width: 100%;
   border-radius: 8px;
@@ -82,7 +81,7 @@ a.link.active .sidebarListItem {
 }
 .sidebarSelectList div {
   display: flex;
-  padding: 8px 8px 10px 8px;
+  padding:7px 10px 7px 10px;
   flex-direction: column;
   justify-content: flex-start;
   font-family: "Nanum Gothic", sans-serif;
@@ -124,7 +123,19 @@ a.link.active .sidebarListItem {
 .active .sidebarSelectHead {
   width: 100%;
   border-radius: 8px;
-  background-color: #98DFF5;
+  border-top-right-radius: 0px;
+  background-color: #4361ee;
+}
+
+.active .sidebarSelectHead .icon {
+  color: #fff;
+}
+
+.active .sidebarSelectHead span {
+  color: #fff;
 }
 
 
+.sidebarMenu{
+  margin-top: 10px;
+}

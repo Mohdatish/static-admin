@@ -161,12 +161,13 @@ export default function App() {
           </Drawer>
 
           <Main open={open}>
+            <Toolbar/>
             <Routing />
           </Main>
         </Box>
         : router.pathname === "/" && auth
           ?
-          <Navigate to="/home"></Navigate>
+          <Navigate to="/dashboard"></Navigate>
           :
           <Login />
       }

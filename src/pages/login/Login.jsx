@@ -116,15 +116,16 @@ export default function Login() {
   return (
     <>
       <div className="loginBg">
-        <Container maxWidth="sm">
+        <Container maxWidth="xs">
           <LoginPaper data-aos="zoom-in">
             <div className="row">
-              <div className="col-xs-12 col-sm-12 col-md-6">
+              <div className="col-xs-12 col-sm-12 col-md-12">
                 <form onSubmit={submitForm} method="post">
                   <div className="login-page">
                     <div className="w-100 text-center">
                       <br />
                       <div className="fields">
+                        <h4 className="w-100 text-center">MiraCore</h4>
                         <div className="logo mt-4" data-aos="fade-up">
                           {'Sign In to Administrator'}
                         </div>
@@ -134,9 +135,11 @@ export default function Login() {
                       <label>Email</label>
                       <input
                         required={true}
+                        autoComplete='new-email'
                         type="email"
                         id="email"
                         name="email"
+                        placeholder="email@email.com"
                         onChange={inputEvent}
                         onKeyDown={handleKeyDown}
                       />
@@ -145,8 +148,10 @@ export default function Login() {
                         <input
                           required={true}
                           type={view ? "text" : "password"}
+                          autoComplete='new-password'
                           id="password"
                           name="password"
+                          placeholder="********"
                           onChange={inputEvent}
                           onKeyDown={handleKeyDown}
                         />
@@ -157,21 +162,12 @@ export default function Login() {
                           onClick={handleView}
                         ></i>
                       </div>
-                      <button className="tripiBtn w-100 mt-2">
+                      <button className="custom-button w-100 mt-2">
                         {load ? "authenticating..." : "Sign In"}
                       </button>
                     </div>
                   </div>
                 </form>
-              </div>
-              <div className="col-xs-12 col-sm-12 col-md-6">
-                <div className="rightBox">
-                  <div className="textBox">
-                    <h5>Market Place</h5>
-                    <p>Welcome back, Admin! Let's make some magic happen.</p>
-                  </div>
-                </div>
-                {/* <img src='/images/loginRight.png' className="w-100 mt-4" alt="login" /> */}
               </div>
             </div>
           </LoginPaper>

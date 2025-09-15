@@ -4,16 +4,20 @@ import UserDetails from './pages/user/UserDetails';
 import Profile from './pages/admin/Profile';
 import ChangePassword from './pages/admin/ChangePassword';
 import Product from './pages/product/Product';
+import Loan from './pages/loan/Loan';
+import NotificationManagement from './pages/notification/NotificationManagement';
+import Dashboard from './pages/dashboard/Dashboard';
 
 export default [
-    // { path: "/dashboard", Component: <Home /> },
+    { path: "/dashboard", Component: <Dashboard /> },
     { path: "/users", Component: <Users /> },
     { path: "/users/:id", Component: <UserDetails /> },
     { path: "/my-profile", Component: <Profile /> },
     { path: "/change-password", Component: <ChangePassword /> },
-    { path: "/change-password", Component: <ChangePassword /> },
-    { path: "/change-password", Component: <ChangePassword /> },
+    { path: "/notifications", Component: <NotificationManagement /> },
     { path: "/products", Component: <Product /> },
+    { path: "/loan", Component: <Loan /> },
+
 
     // { path: "/*", Component: <Home /> },
 ]
