@@ -1,4 +1,3 @@
-// import Home from './pages/home/Home';
 import Users from './pages/user/Users';
 import UserDetails from './pages/user/UserDetails';
 import Profile from './pages/admin/Profile';
