@@ -8,7 +8,7 @@ import Loan from './pages/loan/Loan';
 import NotificationManagement from './pages/notification/NotificationManagement';
 import Dashboard from './pages/dashboard/Dashboard';
 
-export default [
+const routes = [
     { path: "/dashboard", Component: <Dashboard /> },
     { path: "/users", Component: <Users /> },
     { path: "/users/:id", Component: <UserDetails /> },
@@ -18,3 +18,6 @@ export default [
     { path: "/products", Component: <Product /> },
     { path: "/loan", Component: <Loan /> },
 ]
+
+
+export default routes;

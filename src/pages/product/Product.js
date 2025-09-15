@@ -616,6 +616,8 @@ const Product = () => {
                     });
                 }
                 break;
+            default:
+            return
         }
         setErrors((prev) => ({ ...prev, [field]: error }));
     };
